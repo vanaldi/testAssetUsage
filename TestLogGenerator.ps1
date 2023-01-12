@@ -30,7 +30,7 @@ $staticData = @"
     "Time": "$currentTime",
     "Computer": "Computer1",
     "AdditionalContext": {
-                "InstanceName": "user3",
+                "InstanceName": "user5",
                 "TimeZone": "Pacific Time",
                 "Level": 4,
         "CounterName": "AppMetric1",
@@ -41,7 +41,7 @@ $staticData = @"
     "Time": "$currentTime",
     "Computer": "Computer2",
     "AdditionalContext": {
-                "InstanceName": "user4",
+                "InstanceName": "user6",
                 "TimeZone": "Central Time",
                 "Level": 3,
         "CounterName": "AppMetric1",

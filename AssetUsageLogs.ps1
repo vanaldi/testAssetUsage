@@ -1,7 +1,7 @@
 param([string] $tenantId)
 param([string] $appId)
-param([string] &appSecret)
-param([string] &dcrImmutableId)
+param([string] $appSecret)
+param([string] $dcrImmutableId)
 param([string] $resourceType)
 param([string] $resourceName)
 Add-Type -AssemblyName System.Web;

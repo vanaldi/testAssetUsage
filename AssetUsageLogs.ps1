@@ -1,4 +1,5 @@
 Add-Type -AssemblyName System.Web;
+param([string] $tenantId)
 $scope= [System.Web.HttpUtility]::UrlEncode("https://monitor.azure.com//.default")   
 $body = "client_id=$appId&scope=$scope&client_secret=$appSecret&grant_type=client_credentials";
 $headers = @{"Content-Type"="application/x-www-form-urlencoded"};
@@ -20,6 +21,6 @@ $staticData = @"
 
 $body = $staticData;
 echo $body;
-#$headers = @{"Authorization"="Bearer $bearerToken";"Content-Type"="application/json"};
+$headers = @{"Authorization"="Bearer $bearerToken";"Content-Type"="application/json"};
 $uri = "$dceEndpoint/dataCollectionRules/$dcrImmutableId/streams/Custom-AssetUsage_CL?api-version=2021-11-01-preview"
 $uploadResponse = Invoke-RestMethod -Uri $uri -Method "Post" -Body $body -Headers $headers

@@ -1,5 +1,5 @@
-Add-Type -AssemblyName System.Web;
 param([string] $tenantId)
+Add-Type -AssemblyName System.Web;
 $scope= [System.Web.HttpUtility]::UrlEncode("https://monitor.azure.com//.default")   
 $body = "client_id=$appId&scope=$scope&client_secret=$appSecret&grant_type=client_credentials";
 $headers = @{"Content-Type"="application/x-www-form-urlencoded"};

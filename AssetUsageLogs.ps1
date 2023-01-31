@@ -22,6 +22,7 @@ $staticData = @"
 $body = $staticData;
 echo $body;
 $headers = @{"Authorization"="Bearer $bearerToken";"Content-Type"="application/json"};
+Write-Output $dceEndpoint
 $uri = "$dceEndpoint/dataCollectionRules/$dcrImmutableId/streams/Custom-AssetUsage_CL?api-version=2021-11-01-preview"
 Write-Output $uri
 $uploadResponse = Invoke-RestMethod -Uri $uri -Method "Post" -Body $body -Headers $headers

@@ -1,4 +1,4 @@
-param([string] $tenantId, $appId, $appSecret, $dcrImmutableId,  $resourceType,  $resourceName)
+param([string] $tenantId, $appId, $appSecret, $dcrImmutableId, $dceEndpoint,  $resourceType,  $resourceName)
 Add-Type -AssemblyName System.Web;
 $scope= [System.Web.HttpUtility]::UrlEncode("https://monitor.azure.com//.default")   
 $body = "client_id=$appId&scope=$scope&client_secret=$appSecret&grant_type=client_credentials";
@@ -23,4 +23,5 @@ $body = $staticData;
 echo $body;
 $headers = @{"Authorization"="Bearer $bearerToken";"Content-Type"="application/json"};
 $uri = "$dceEndpoint/dataCollectionRules/$dcrImmutableId/streams/Custom-AssetUsage_CL?api-version=2021-11-01-preview"
+Write-Output $uri
 $uploadResponse = Invoke-RestMethod -Uri $uri -Method "Post" -Body $body -Headers $headers
